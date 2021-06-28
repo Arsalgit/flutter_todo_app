@@ -14,6 +14,21 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(
               title: Text("ToDo App Example"),
             ),
-            body: TodoApp()));
+            body: TodoApp(),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text("Add Item"),
+                        content: TextField(
+                          onChanged: (value) {},
+                        ),
+                      );
+                    });
+              },
+              child: Icon(Icons.add),
+            )));
   }
 }
