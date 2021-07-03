@@ -24,13 +24,22 @@ class _TodoAppState extends State<TodoApp> {
                     color: Colors.white,
                     child: ListTile(
                       title: Text("${lst[index]}"),
-                      trailing: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              lst.remove(index);
-                            });
-                          },
-                          child: Icon(Icons.delete)),
+                      trailing: Row(
+                        children: [
+                          GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  lst.removeAt(index);
+                                });
+                              },
+                              child: Icon(Icons.delete)),
+                          GestureDetector(
+                              onTap: () {
+                                setState(() {});
+                              },
+                              child: Icon(Icons.edit)),
+                        ],
+                      ),
                     ),
                   );
                 })),
